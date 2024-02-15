@@ -185,7 +185,6 @@ func (fs Fs) Remove(in_name string) error {
 }
 
 func (fs Fs) RemoveDir(name string) error {
-	println("DELETE")
 	name = fs.GetPath(name)
 	_, err := fs.s3API.DeleteObject(&s3.DeleteObjectInput{
 		Bucket: aws.String(fs.bucket),
